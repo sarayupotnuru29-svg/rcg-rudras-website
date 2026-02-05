@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/rcg-logo.png";
 
 const navLinks = [
@@ -69,22 +68,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="tel:+918897999766"
-              className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              +91-889-799-9766
-            </a>
-            <Link to="/get-started">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-gold">
-                Book Demo
-              </Button>
-            </Link>
-          </div>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -119,20 +102,6 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <div className="flex flex-col gap-2 mt-3 px-4">
-              <a
-                href="tel:+918897999766"
-                className="flex items-center gap-2 text-sm font-medium text-foreground"
-              >
-                <Phone className="w-4 h-4" />
-                +91-889-799-9766
-              </a>
-              <Link to="/get-started">
-                <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
-                  Book Demo
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       </nav>
