@@ -23,7 +23,7 @@ const DemoForm = () => {
     <div className="bg-card rounded-2xl shadow-2xl p-6 md:p-8 border border-border">
       <div className="text-center mb-6">
         <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
-          Book a Free Demo
+          Get Started
         </h3>
         <p className="text-sm text-muted-foreground">
           Start your journey today with a free demo class
@@ -91,7 +91,7 @@ const DemoForm = () => {
           type="submit"
           className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base py-6 shadow-gold transition-all duration-300 hover:scale-[1.02]"
         >
-          Book Free Demo →
+          Get Started →
         </Button>
       </form>
 

@@ -16,7 +16,7 @@ export interface EnquiryFormData {
 
 export const redirectToWhatsAppDemo = (data: DemoFormData) => {
   const message = encodeURIComponent(
-    `Hi, I'm interested in booking a demo!\n\n` +
+    `Hi, I'm interested to join in RCG Rudra's cloud Gurukul!\n\n` +
     `Name: ${data.name}\n` +
     `Phone: ${data.phone}\n` +
     `Course: ${data.course}\n\n` +
