@@ -46,6 +46,10 @@ const Navbar = () => {
               alt="RCG Rudra's Cloud Gurukul"
               className="h-12 md:h-14 w-auto"
             />
+            <div className="hidden sm:flex flex-col">
+              <span className="text-sm md:text-base font-bold text-foreground leading-tight">RCG</span>
+              <span className="text-xs md:text-sm font-medium text-accent leading-tight">Rudra's Cloud Gurukul</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

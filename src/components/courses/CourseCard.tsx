@@ -11,11 +11,21 @@ const CourseCard = ({ course }: CourseCardProps) => {
 
   return (
     <div className="group bg-card rounded-xl border border-border shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1">
-      {/* Icon Header */}
-      <div className="p-6 pb-4 bg-gradient-to-br from-sky to-sky-dark">
-        <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shadow-navy">
-          <Icon className="w-7 h-7 text-accent" />
-        </div>
+      {/* Image Header */}
+      <div className="relative h-40 bg-gradient-to-br from-sky to-sky-dark overflow-hidden">
+        {course.image ? (
+          <img 
+            src={course.image} 
+            alt={course.title}
+            className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="w-16 h-16 rounded-xl bg-primary flex items-center justify-center shadow-navy">
+              <Icon className="w-8 h-8 text-accent" />
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Content */}

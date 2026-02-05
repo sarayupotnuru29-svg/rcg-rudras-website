@@ -1,4 +1,18 @@
-import { Cloud, Database, Code, BarChart3, Cpu, Layers, Globe, Server, Palette, Workflow, Brain, TableProperties } from "lucide-react";
+import { Cloud, Database, Code, BarChart3, Layers, Globe, Palette, Workflow, Brain, TableProperties } from "lucide-react";
+
+// Course images
+import awsDevopsImg from "@/assets/courses/aws-devops.png";
+import gcpDevopsImg from "@/assets/courses/gcp-devops.png";
+import azureDevopsImg from "@/assets/courses/azure-devops.png";
+import multiCloudImg from "@/assets/courses/multi-cloud.png";
+import dataScienceImg from "@/assets/courses/data-science.png";
+import genaiImg from "@/assets/courses/genai.png";
+import javaFullstackImg from "@/assets/courses/java-fullstack.png";
+import pythonFullstackImg from "@/assets/courses/python-fullstack.png";
+import powerBiImg from "@/assets/courses/power-bi.png";
+import fullstackImg from "@/assets/courses/fullstack.png";
+import uiUxImg from "@/assets/courses/ui-ux.png";
+import oraclePlsqlImg from "@/assets/courses/oracle-plsql.png";
 
 export interface Course {
   id: string;
@@ -6,6 +20,7 @@ export interface Course {
   subtitle: string;
   description: string;
   icon: typeof Cloud;
+  image?: string;
   category: "devops" | "fullstack" | "data" | "tools";
   featured?: boolean;
 }
@@ -17,6 +32,7 @@ export const courses: Course[] = [
     subtitle: "Complete Career Package",
     description: "Comprehensive training program with 100% placement assistance. Get industry-ready skills and land your dream job in IT.",
     icon: Workflow,
+    image: multiCloudImg,
     category: "devops",
     featured: true,
   },
@@ -26,6 +42,7 @@ export const courses: Course[] = [
     subtitle: "Job-Oriented Training",
     description: "Master Google Cloud Platform with hands-on DevOps training. Learn CI/CD, Kubernetes, and cloud infrastructure management.",
     icon: Cloud,
+    image: gcpDevopsImg,
     category: "devops",
     featured: true,
   },
@@ -35,6 +52,7 @@ export const courses: Course[] = [
     subtitle: "Job-Oriented Training",
     description: "Become an AWS certified DevOps engineer. Learn EC2, S3, Lambda, CodePipeline, and infrastructure automation.",
     icon: Cloud,
+    image: awsDevopsImg,
     category: "devops",
     featured: true,
   },
@@ -44,6 +62,7 @@ export const courses: Course[] = [
     subtitle: "Job-Oriented Training",
     description: "Master Microsoft Azure cloud services and DevOps practices. Learn Azure Pipelines, AKS, and enterprise cloud solutions.",
     icon: Cloud,
+    image: azureDevopsImg,
     category: "devops",
     featured: true,
   },
@@ -53,6 +72,7 @@ export const courses: Course[] = [
     subtitle: "Job-Oriented Training",
     description: "Learn to work across AWS, Azure, and GCP. Master multi-cloud architecture and DevOps best practices.",
     icon: Layers,
+    image: multiCloudImg,
     category: "devops",
     featured: true,
   },
@@ -62,6 +82,7 @@ export const courses: Course[] = [
     subtitle: "Real-Time Oriented Training",
     description: "Learn Python, Machine Learning, and Data Analytics. Work on real-world projects and build a strong portfolio.",
     icon: BarChart3,
+    image: dataScienceImg,
     category: "data",
     featured: true,
   },
@@ -71,6 +92,7 @@ export const courses: Course[] = [
     subtitle: "Real-Time Oriented Training",
     description: "Master Large Language Models, prompt engineering, and AI application development. Build cutting-edge AI solutions.",
     icon: Brain,
+    image: genaiImg,
     category: "data",
     featured: true,
   },
@@ -80,6 +102,7 @@ export const courses: Course[] = [
     subtitle: "Industry-Ready Training",
     description: "Master Java, Spring Boot, React, and databases. Build enterprise-grade full-stack applications.",
     icon: Code,
+    image: javaFullstackImg,
     category: "fullstack",
   },
   {
@@ -88,6 +111,7 @@ export const courses: Course[] = [
     subtitle: "Industry-Ready Training",
     description: "Learn Python, Django, React, and modern web technologies. Create scalable web applications.",
     icon: Code,
+    image: pythonFullstackImg,
     category: "fullstack",
   },
   {
@@ -96,6 +120,7 @@ export const courses: Course[] = [
     subtitle: "Design-Focused Training",
     description: "Master user interface and experience design. Learn Figma, prototyping, and frontend development.",
     icon: Palette,
+    image: uiUxImg,
     category: "fullstack",
   },
   {
@@ -104,6 +129,7 @@ export const courses: Course[] = [
     subtitle: "Complete Web Development",
     description: "Comprehensive training in frontend, backend, and database technologies. Become a versatile developer.",
     icon: Globe,
+    image: fullstackImg,
     category: "fullstack",
   },
   {
@@ -112,6 +138,7 @@ export const courses: Course[] = [
     subtitle: "Hands-on Projects",
     description: "Master Oracle database programming with PL/SQL. Learn stored procedures, triggers, and database optimization.",
     icon: Database,
+    image: oraclePlsqlImg,
     category: "tools",
   },
   {
@@ -120,6 +147,7 @@ export const courses: Course[] = [
     subtitle: "Hands-on Projects",
     description: "Create stunning data visualizations and business intelligence reports. Master DAX and Power Query.",
     icon: TableProperties,
+    image: powerBiImg,
     category: "tools",
   },
 ];

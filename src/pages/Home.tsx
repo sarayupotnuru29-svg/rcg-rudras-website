@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, Instagram, Linkedin, CheckCircle, Users, Trophy, Briefcase, GraduationCap, Clock, TrendingUp, Building2, ArrowRight } from "lucide-react";
+import { MessageCircle, Instagram, Linkedin, Users, Trophy, Briefcase, GraduationCap, Clock, TrendingUp, Building2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import DemoForm from "@/components/forms/DemoForm";
@@ -7,6 +7,7 @@ import CourseCard from "@/components/courses/CourseCard";
 import TestimonialCard from "@/components/testimonials/TestimonialCard";
 import { courses } from "@/lib/courses";
 import { testimonials } from "@/lib/testimonials";
+import { companies } from "@/lib/companies";
 import { openWhatsApp } from "@/lib/whatsapp";
 
 const highlights = [
@@ -25,14 +26,9 @@ const careerStats = [
   { value: "100+", label: "Career Transitions" },
 ];
 
-const companies = [
-  "Google", "Amazon", "Microsoft", "Wipro", "TCS", "Infosys",
-  "HCL", "Tech Mahindra", "Accenture", "Cognizant", "IBM", "Oracle",
-];
-
 const Home = () => {
   const featuredCourses = courses.filter((c) => c.featured).slice(0, 6);
-  const featuredTestimonials = testimonials.slice(0, 3);
+  const featuredTestimonials = testimonials;
 
   return (
     <Layout>
@@ -258,15 +254,17 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {companies.map((company, index) => (
               <div
                 key={index}
-                className="bg-card rounded-lg p-4 flex items-center justify-center border border-border hover:shadow-md transition-all duration-300"
+                className="bg-card rounded-lg p-4 h-20 flex items-center justify-center border border-border hover:shadow-md transition-all duration-300"
               >
-                <span className="text-sm md:text-base font-semibold text-foreground/70">
-                  {company}
-                </span>
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  className="max-h-12 max-w-full object-contain"
+                />
               </div>
             ))}
           </div>
