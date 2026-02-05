@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/rcg-logo.png";
+import logo from "@/assets/apple-touch-icon.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
