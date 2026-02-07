@@ -172,42 +172,42 @@
 //       </section>
 
 //       {/* Career Transition Section */}
-//       <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-secondary to-navy-dark relative overflow-hidden">
+//       <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-secondary to-navy-dark relative overflow-hidden">
 //         <div className="container mx-auto px-4 relative z-10">
-//           <div className="text-center mb-12">
-//             <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-4">
+//           <div className="text-center mb-16">
+//             <span className="inline-block px-6 py-3 bg-accent/20 text-accent rounded-full text-lg md:text-xl font-bold mb-6 tracking-wide uppercase">
 //               Career Transformation
 //             </span>
-//             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+//             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground mb-6 tracking-tight">
 //               Cloud & DevOps Career Transition
 //             </h2>
-//             <p className="text-primary-foreground/80 max-w-2xl mx-auto">
+//             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
 //               Join 100+ successful professionals who transformed their careers with our
 //               comprehensive DevOps and Cloud training programs.
 //             </p>
 //           </div>
 
-//           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+//           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
 //             {careerStats.map((stat, index) => (
 //               <div
 //                 key={index}
-//                 className="text-center p-6 bg-primary-foreground/5 backdrop-blur-sm rounded-xl border border-primary-foreground/10"
+//                 className="text-center p-8 bg-primary-foreground/5 backdrop-blur-sm rounded-xl border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-colors"
 //               >
-//                 <div className="flex items-center justify-center gap-2 mb-2">
-//                   <TrendingUp className="w-6 h-6 text-accent" />
-//                   <span className="text-3xl md:text-4xl font-bold text-accent">
+//                 <div className="flex items-center justify-center gap-2 mb-3">
+//                   <TrendingUp className="w-8 h-8 text-accent" />
+//                   <span className="text-4xl md:text-5xl font-black text-accent">
 //                     {stat.value}
 //                   </span>
 //                 </div>
-//                 <p className="text-primary-foreground/80 text-sm">{stat.label}</p>
+//                 <p className="text-primary-foreground/90 text-sm md:text-base font-medium">{stat.label}</p>
 //               </div>
 //             ))}
 //           </div>
 
 //           <div className="text-center">
 //             <Link to="/get-started">
-//               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-gold">
-//                 Start Your Transformation <ArrowRight className="ml-2 w-5 h-5" />
+//               <Button size="xl" className="h-14 px-10 bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold shadow-gold rounded-full">
+//                 Start Your Transformation <ArrowRight className="ml-2 w-6 h-6" />
 //               </Button>
 //             </Link>
 //           </div>
@@ -321,8 +321,6 @@
 // };
 
 // export default Home;
-
-
 
 import { Link } from "react-router-dom";
 import { 
@@ -544,7 +542,8 @@ const Home = () => {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+            {/* UPDATED FONT SIZE FOR OUR COURSES */}
+            <span className="inline-block px-10 py-4 bg-accent/10 text-[#001f3f] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm">
               Our Courses
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -572,7 +571,8 @@ const Home = () => {
       <section className="py-16 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+            {/* UPDATED FONT SIZE FOR OUR ALUMNI */}
+            <span className="inline-block px-10 py-4 bg-accent/10 text-[#001f3f] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm">
               Our Alumni
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -601,7 +601,8 @@ const Home = () => {
       <section className="py-16 md:py-24 bg-sky">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+            {/* UPDATED FONT SIZE FOR TESTIMONIALS */}
+            <span className="inline-block px-10 py-4 bg-accent/10 text-[#001f3f] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm">
               Testimonials
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

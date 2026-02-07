@@ -1,18 +1,19 @@
 import { Cloud, Database, Code, BarChart3, Layers, Globe, Palette, Workflow, Brain, TableProperties } from "lucide-react";
 
 // Course images
-import awsDevopsImg from "@/assets/courses/aws-devops.png";
-import gcpDevopsImg from "@/assets/courses/gcp-devops.png";
-import azureDevopsImg from "@/assets/courses/azure-devops.png";
-import multiCloudImg from "@/assets/courses/multi-cloud.png";
-import dataScienceImg from "@/assets/courses/data-science.png";
-import genaiImg from "@/assets/courses/genai.png";
-import javaFullstackImg from "@/assets/courses/java-fullstack.png";
-import pythonFullstackImg from "@/assets/courses/python-fullstack.png";
-import powerBiImg from "@/assets/courses/power-bi.png";
-import fullstackImg from "@/assets/courses/fullstack.png";
-import uiUxImg from "@/assets/courses/ui-ux.png";
-import oraclePlsqlImg from "@/assets/courses/oracle-plsql.png";
+import Training from "@/assets/courses/training.avif";
+import gcpDevopsImg from "@/assets/courses/gcpdevops.webp";
+import awsDevopsImg from "@/assets/courses/awsdevops.jpg";
+import azureDevopsImg from "@/assets/courses/azuredevops.png";
+import multiCloudImg from "@/assets/courses/multicloud.png";
+import dataScienceImg from "@/assets/courses/datascience.webp";
+import genaiImg from "@/assets/courses/aidatascience.png";
+import javaFullstackImg from "@/assets/courses/javafullstack.png";
+import pythonFullstackImg from "@/assets/courses/pythonfullstack.png";
+import uiUxImg from "@/assets/courses/uiux.jpg";
+import fullstackImg from "@/assets/courses/FullStack.avif";
+import oraclePlsqlImg from "@/assets/courses/oracleplsql.jpg";
+import powerBiImg from "@/assets/courses/powerbifullstack.png";
 
 export interface Course {
   id: string;
@@ -32,7 +33,7 @@ export const courses: Course[] = [
     subtitle: "Complete Career Package",
     description: "Comprehensive training program with 100% placement assistance. Get industry-ready skills and land your dream job in IT.",
     icon: Workflow,
-    image: multiCloudImg,
+    image: Training,
     category: "devops",
     featured: true,
   },
