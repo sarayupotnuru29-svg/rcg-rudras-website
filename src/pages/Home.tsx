@@ -68,13 +68,17 @@
 //                 #1 DevOps Training Institute in Hyderabad
 //               </span>
               
-//               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in whitespace-nowrap" style={{ animationDelay: "0.1s" }}>
+//               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
 //                 Learn, Grow and <span className="text-gradient-gold">Succeed</span>
 //               </h1>
 
+//               {/* Updated Information Section */}
 //               <div className="text-base md:text-lg text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
 //                 <p>
-//                   Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices.
+//                   Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices. Our industry expert trainers mentor students and professionals to master the latest technologies and achieve strong placement outcomes.
+//                 </p>
+//                 <p className="hidden md:block">
+//                   Recognized as one of the best DevOps training institutes in Hyderabad, we deliver a well-structured course with hands-on experience and personalized one-to-one guidance suitable for beginners and IT professionals.
 //                 </p>
 //               </div>
 
@@ -212,7 +216,6 @@
 // export default Home;
 
 
-
 import { Link } from "react-router-dom";
 import { 
   MessageCircle, Instagram, Linkedin, Users, Trophy, Briefcase, 
@@ -287,7 +290,6 @@ const Home = () => {
                 Learn, Grow and <span className="text-gradient-gold">Succeed</span>
               </h1>
 
-              {/* Updated Information Section */}
               <div className="text-base md:text-lg text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
                 <p>
                   Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices. Our industry expert trainers mentor students and professionals to master the latest technologies and achieve strong placement outcomes.
@@ -327,16 +329,26 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About RCG Section */}
       <section className="py-16 md:py-28 bg-background">
         <div className="container mx-auto px-4 text-center">
-          <SectionBadge>About Us</SectionBadge>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-8 tracking-tight">
-            Why Choose <span className="text-accent">Rudra's Cloud Gurukul?</span>
+          <SectionBadge>About RCG</SectionBadge>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-12 tracking-tight">
+            Elevate Your Career with <span className="text-accent">Rudra's Cloud Gurukul</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-             Rudra’s Cloud Gurukul offers industry-focused training in cutting-edge technologies. All training programs are designed by professionals with real-time experience.
-          </p>
+          <div className="grid lg:grid-cols-1 gap-8 text-left max-w-5xl mx-auto">
+            <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p>
+                Rudra’s Cloud Gurukul offers industry-focused training in cutting-edge technologies such as <strong>DevOps with GCP, AWS and Azure, Power BI, Full Stack Development, Data Science, GenAI</strong> and more. All training programs are designed and delivered by certified professionals with real-time industry experience, helping learners gain strong conceptual knowledge and accelerate their career growth.
+              </p>
+              <p>
+                With an updated, skill-driven, role-based curriculum and hands-on learning approach, our programs are ideal for both students and working professionals looking to upskill and achieve their career goals. Rudra’s Cloud Gurukul is committed to delivering a high-quality classroom and live online training experience that prepares learners for real-world challenges.
+              </p>
+              <p className="border-l-4 border-accent pl-6 py-2 italic bg-muted/50 rounded-r-lg">
+                The DevOps course covers core concepts, GCP DevOps, AWS DevOps and popular tools such as <strong>Jenkins, Docker, Kubernetes, Git, Maven, Ansible, and Chef</strong>. With comprehensive online and classroom options, Rudra’s Cloud Gurukul helps you gain job-ready skills and succeed in today’s competitive IT market.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
