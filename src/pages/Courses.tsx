@@ -16,7 +16,8 @@ const Courses = () => {
       {/* Hero */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-secondary to-navy-dark">
         <div className="container mx-auto px-4 text-center">
-          <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-6">
+          {/* Increased text size to 3xl/5xl and made it bold */}
+          <span className="inline-block px-8 py-4 bg-accent/20 text-accent rounded-full text-3xl md:text-5xl font-bold mb-8">
             Our Courses
           </span>
           <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-6">
