@@ -48,7 +48,7 @@
 //                 #1 DevOps Training Institute in Hyderabad
 //               </span>
               
-//               {/* Headline adjusted to text-3xl/text-4xl/text-5xl to stay on one line */}
+//               {/* Headline adjusted to stay on one line */}
 //               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in whitespace-nowrap" style={{ animationDelay: "0.1s" }}>
 //                 Learn, Grow and <span className="text-gradient-gold">Succeed</span>
 //               </h1>
@@ -63,7 +63,7 @@
 //                 </p>
 //               </div>
 
-//               {/* Hero Social Icons */}
+//               {/* Hero Social Icons - UPDATED LINKS */}
 //               <div className="flex gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
 //                 <button
 //                   onClick={openWhatsApp}
@@ -73,7 +73,7 @@
 //                   <MessageCircle className="w-6 h-6" />
 //                 </button>
 //                 <a
-//                   href="https://instagram.com"
+//                   href="https://www.instagram.com/rudrascloud"
 //                   target="_blank"
 //                   rel="noopener noreferrer"
 //                   className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white flex items-center justify-center hover:scale-110 transition-transform"
@@ -82,7 +82,7 @@
 //                   <Instagram className="w-6 h-6" />
 //                 </a>
 //                 <a
-//                   href="https://linkedin.com"
+//                   href="https://www.linkedin.com/in/rudra-s-cloud-gurukul-5b54243aa"
 //                   target="_blank"
 //                   rel="noopener noreferrer"
 //                   className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform"
@@ -98,7 +98,6 @@
 //                     Explore Courses
 //                   </Button>
 //                 </Link>
-                
 //               </div>
 //             </div>
 
