@@ -45,6 +45,13 @@ const Home = () => {
   const featuredCourses = courses.filter((c) => c.featured).slice(0, 6);
   const featuredTestimonials = testimonials;
 
+  // Heading Badge Component for consistency
+  const SectionBadge = ({ children }) => (
+    <span className="inline-block px-10 py-4 bg-[#fff8e1] text-[#ffc107] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm border border-[#ffecb3]">
+      {children}
+    </span>
+  );
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -67,18 +74,12 @@ const Home = () => {
 
               <div className="text-base md:text-lg text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
                 <p>
-                  Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices. Our industry expert trainers, mentor students and professionals to master the latest technologies and achieve strong placement outcomes.
-                </p>
-                <p>
-                  Recognized as one of the best DevOps training institutes in Hyderabad, Rudra’s Cloud Gurukul delivers a well-structured DevOps course with hands-on experience, real-time scenarios, and personalized one-to-one guidance.
+                  Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices.
                 </p>
               </div>
 
               <div className="flex gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                <button
-                  onClick={openWhatsApp}
-                  className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center hover:scale-110 transition-transform"
-                >
+                <button onClick={openWhatsApp} className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
                   <MessageCircle className="w-6 h-6" />
                 </button>
                 <a href="https://www.instagram.com/rudrascloud" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white flex items-center justify-center hover:scale-110 transition-transform">
@@ -109,59 +110,28 @@ const Home = () => {
 
       {/* About Section */}
       <section className="py-16 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto text-center mb-12">
-            <span className="inline-block px-10 py-4 bg-accent/10 text-[#001f3f] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm">
-              About Us
-            </span>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-8 tracking-tight md:whitespace-nowrap">
-              Why Choose <span className="text-accent">Rudra's Cloud Gurukul?</span>
-            </h2>
-            <div className="text-lg md:text-xl text-muted-foreground leading-relaxed space-y-6 text-center max-w-4xl mx-auto">
-              <p>
-                Rudra’s Cloud Gurukul offers industry-focused training in cutting-edge technologies 
-                such as DevOps with GCP, AWS and Azure, Power BI, Full Stack Development, Data Science, 
-                GenAI and more. All training programs are designed and delivered by certified 
-                professionals with real-time industry experience, helping learners gain strong 
-                conceptual knowledge and accelerate their career growth.
-              </p>
-              <p>
-                With an updated, skill-driven, role-based curriculum and hands-on learning approach, 
-                our programs are ideal for both students and working professionals looking to upskill 
-                and achieve their career goals. Rudra’s Cloud Gurukul is committed to delivering a 
-                high-quality classroom and live online training experience that prepares learners 
-                for real-world challenges.
-              </p>
-              <p>
-                The DevOps course covers core concepts, GCP DevOps, AWS DevOps and popular tools 
-                such as Jenkins, Docker, Kubernetes, Git, Maven, Ansible, and Chef. With 
-                comprehensive online and classroom options, Rudra’s Cloud Gurukul helps you gain 
-                job-ready skills and succeed in today’s competitive IT market.
-              </p>
-            </div>
-          </div>
+        <div className="container mx-auto px-4 text-center">
+          <SectionBadge>About Us</SectionBadge>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-8 tracking-tight">
+            Why Choose <span className="text-accent">Rudra's Cloud Gurukul?</span>
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+             Rudra’s Cloud Gurukul offers industry-focused training in cutting-edge technologies. All training programs are designed by professionals with real-time experience.
+          </p>
         </div>
       </section>
 
       {/* Key Highlights */}
       <section className="py-16 md:py-28 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block px-10 py-4 bg-accent/10 text-[#001f3f] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm">
-              Key Highlights
-            </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
-              What Makes Us Different
-            </h2>
-          </div>
-
+        <div className="container mx-auto px-4 text-center">
+          <SectionBadge>Key Highlights</SectionBadge>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight mb-16">
+            What Makes Us Different
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {highlights.map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center gap-4 p-6 bg-card rounded-2xl border border-border hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
+              <div key={index} className="flex flex-col items-center text-center gap-4 p-6 bg-card rounded-2xl border border-border hover:shadow-xl transition-all duration-300 group">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
                   <item.icon className="w-6 h-6 text-accent group-hover:text-white" />
                 </div>
                 <p className="text-base md:text-lg text-foreground font-semibold leading-snug">{item.label}</p>
@@ -171,150 +141,66 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Career Transition Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-secondary to-navy-dark relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <span className="inline-block px-6 py-3 bg-accent/20 text-accent rounded-full text-lg md:text-xl font-bold mb-6 tracking-wide uppercase">
-              Career Transformation
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground mb-6 tracking-tight">
-              Cloud & DevOps Career Transition
-            </h2>
-            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
-              Join 100+ successful professionals who transformed their careers with our
-              comprehensive DevOps and Cloud training programs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {careerStats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-8 bg-primary-foreground/5 backdrop-blur-sm rounded-xl border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-colors"
-              >
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <TrendingUp className="w-8 h-8 text-accent" />
-                  <span className="text-4xl md:text-5xl font-black text-accent">
-                    {stat.value}
-                  </span>
-                </div>
-                <p className="text-primary-foreground/90 text-sm md:text-base font-medium">{stat.label}</p>
+      {/* Alumni Section */}
+      <section className="py-16 md:py-20 bg-muted">
+        <div className="container mx-auto px-4 text-center">
+          <SectionBadge>Our Alumni</SectionBadge>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+            Our Students Work At
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {companies.map((company, index) => (
+              <div key={index} className="bg-white rounded-lg p-4 h-20 flex items-center justify-center border border-border shadow-sm">
+                <img src={company.logo} alt={company.name} className="max-h-12 max-w-full object-contain" />
               </div>
             ))}
-          </div>
-
-          <div className="text-center">
-            <Link to="/get-started">
-              <Button size="xl" className="h-14 px-10 bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold shadow-gold rounded-full">
-                Start Your Transformation <ArrowRight className="ml-2 w-6 h-6" />
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
 
       {/* Featured Courses */}
       <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            {/* UPDATED FONT SIZE FOR OUR COURSES */}
-            <span className="inline-block px-10 py-4 bg-accent/10 text-[#001f3f] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm">
-              Our Courses
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Featured Courses
-            </h2>
-          </div>
-
+        <div className="container mx-auto px-4 text-center">
+          <SectionBadge>Our Courses</SectionBadge>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+            Featured Courses
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {featuredCourses.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
           </div>
-
-          <div className="text-center">
-            <Link to="/courses">
-              <Button size="lg" variant="outline" className="font-semibold">
-                View All Courses <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Students Work At */}
-      <section className="py-16 md:py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            {/* UPDATED FONT SIZE FOR OUR ALUMNI */}
-            <span className="inline-block px-10 py-4 bg-accent/10 text-[#001f3f] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm">
-              Our Alumni
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Students Work At
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {companies.map((company, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-lg p-4 h-20 flex items-center justify-center border border-border hover:shadow-md transition-all duration-300"
-              >
-                <img
-                  src={company.logo}
-                  alt={company.name}
-                  className="max-h-12 max-w-full object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Preview */}
-      <section className="py-16 md:py-24 bg-sky">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            {/* UPDATED FONT SIZE FOR TESTIMONIALS */}
-            <span className="inline-block px-10 py-4 bg-accent/10 text-[#001f3f] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm">
-              Testimonials
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What Our Students Say
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {/* Testimonials */}
+      <section className="py-16 md:py-24 bg-sky/10">
+        <div className="container mx-auto px-4 text-center">
+          <SectionBadge>Testimonials</SectionBadge>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+            What Our Students Say
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredTestimonials.map((testimonial) => (
               <TestimonialCard key={testimonial.id} testimonial={testimonial} />
             ))}
-          </div>
-
-          <div className="text-center">
-            <Link to="/testimonials">
-              <Button size="lg" variant="outline" className="font-semibold">
-                Read More Reviews <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-accent to-gold-dark">
+      <section className="py-16 md:py-24 bg-[#fab400]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-accent-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-black text-[#0a192f] mb-4">
             Ready to Start Your Career Journey?
           </h2>
-          <p className="text-accent-foreground/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-white text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-bold drop-shadow-sm">
             Join thousands of successful professionals who transformed their careers
             with Rudra's Cloud Gurukul.
           </p>
           <Link to="/get-started">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-navy">
-              Get Started Now <ArrowRight className="ml-2 w-5 h-5" />
+            <Button size="lg" className="bg-[#0a192f] text-white hover:bg-[#0a192f]/90 font-bold px-10 py-6 text-lg rounded-xl">
+              Get Started Now <ArrowRight className="ml-2 w-6 h-6" />
             </Button>
           </Link>
         </div>

@@ -16,13 +16,17 @@ const GetStarted = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-6">
+              {/* INCREASED FONT SIZE FOR BADGE */}
+              <span className="inline-block px-6 py-2 bg-accent/20 text-accent rounded-full text-base md:text-lg font-bold mb-6">
                 Get Started
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-6">
+              
+              {/* REDUCED FONT SIZE & WHITESPACE-NOWRAP FOR SINGLE LINE */}
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-6 whitespace-nowrap">
                 Begin Your Journey to{" "}
                 <span className="text-gradient-gold">Success</span>
               </h1>
+
               <p className="text-lg text-primary-foreground/80 mb-8">
                 Fill out the form and take the first step towards transforming
                 your career. Our team will get back to you within 24 hours.
