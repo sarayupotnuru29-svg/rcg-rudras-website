@@ -48,16 +48,20 @@
 //                 #1 DevOps Training Institute in Hyderabad
 //               </span>
               
-//               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-//                 Learn, Grow and{" "}
-//                 <span className="text-gradient-gold">Succeed</span>
+//               {/* Headline adjusted to text-3xl/text-4xl/text-5xl to stay on one line */}
+//               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in whitespace-nowrap" style={{ animationDelay: "0.1s" }}>
+//                 Learn, Grow and <span className="text-gradient-gold">Succeed</span>
 //               </h1>
 
-//               <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
-//                 Rudra's Cloud Gurukul is a leading software training institute in
-//                 Hyderabad, offering high-quality classroom and live online training
-//                 with real-time projects at affordable prices.
-//               </p>
+//               {/* Updated Long Description */}
+//               <div className="text-base md:text-lg text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
+//                 <p>
+//                   Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices. Our industry expert trainers, mentor students and professionals to master the latest technologies and achieve strong placement outcomes.
+//                 </p>
+//                 <p>
+//                   Recognized as one of the best DevOps training institutes in Hyderabad, Rudra’s Cloud Gurukul delivers a well-structured DevOps course with hands-on experience, real-time scenarios, and personalized one-to-one guidance. Our training is suitable for beginners and experienced IT professionals alike.
+//                 </p>
+//               </div>
 
 //               {/* Hero Social Icons */}
 //               <div className="flex gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
@@ -94,17 +98,15 @@
 //                     Explore Courses
 //                   </Button>
 //                 </Link>
-//                 <Link to="/contact">
-//                   <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-//                     Contact Us
-//                   </Button>
-//                 </Link>
+                
 //               </div>
 //             </div>
 
-//             {/* Right Form */}
-//             <div className="order-1 lg:order-2 animate-slide-in-right">
-//               <DemoForm />
+//             {/* Right Form - Rectangular Shape */}
+//             <div className="order-1 lg:order-2 animate-slide-in-right flex justify-center lg:justify-end">
+//               <div className="w-full max-w-[400px]">
+//                 <DemoForm />
+//               </div>
 //             </div>
 //           </div>
 //         </div>
@@ -373,18 +375,22 @@ const Home = () => {
                 #1 DevOps Training Institute in Hyderabad
               </span>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                Learn, Grow and{" "}
-                <span className="text-gradient-gold">Succeed</span>
+              {/* Headline adjusted to stay on one line */}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in whitespace-nowrap" style={{ animationDelay: "0.1s" }}>
+                Learn, Grow and <span className="text-gradient-gold">Succeed</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                Rudra's Cloud Gurukul is a leading software training institute in
-                Hyderabad, offering high-quality classroom and live online training
-                with real-time projects at affordable prices.
-              </p>
+              {/* Updated Long Description */}
+              <div className="text-base md:text-lg text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
+                <p>
+                  Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices. Our industry expert trainers, mentor students and professionals to master the latest technologies and achieve strong placement outcomes.
+                </p>
+                <p>
+                  Recognized as one of the best DevOps training institutes in Hyderabad, Rudra’s Cloud Gurukul delivers a well-structured DevOps course with hands-on experience, real-time scenarios, and personalized one-to-one guidance. Our training is suitable for beginners and experienced IT professionals alike.
+                </p>
+              </div>
 
-              {/* Hero Social Icons */}
+              {/* Hero Social Icons - UPDATED LINKS */}
               <div className="flex gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
                 <button
                   onClick={openWhatsApp}
@@ -394,7 +400,7 @@ const Home = () => {
                   <MessageCircle className="w-6 h-6" />
                 </button>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/rudrascloud"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white flex items-center justify-center hover:scale-110 transition-transform"
@@ -403,7 +409,7 @@ const Home = () => {
                   <Instagram className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/rudra-s-cloud-gurukul-5b54243aa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform"
@@ -419,17 +425,12 @@ const Home = () => {
                     Explore Courses
                   </Button>
                 </Link>
-                <Link to="/contact">
-                  <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                    Contact Us
-                  </Button>
-                </Link>
               </div>
             </div>
 
-            {/* Right Form - UPDATED WIDTH FOR RECTANGLE SHAPE */}
+            {/* Right Form - Rectangular Shape */}
             <div className="order-1 lg:order-2 animate-slide-in-right flex justify-center lg:justify-end">
-              <div className="w-full max-w-[400px]"> {/* This creates the rectangular profile */}
+              <div className="w-full max-w-[400px]">
                 <DemoForm />
               </div>
             </div>
@@ -437,8 +438,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ... (Rest of the code remains the same) ... */}
-      
       {/* About Section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
