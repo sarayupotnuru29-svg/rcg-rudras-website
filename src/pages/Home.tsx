@@ -34,20 +34,13 @@ const highlights = [
   { icon: ShieldCheck, label: "Flexible learning schedule with continued placement support" },
 ];
 
-const careerStats = [
-  { value: "72%", label: "Average Salary Hike" },
-  { value: "38 LPA", label: "Highest Package" },
-  { value: "12 LPA", label: "Average Package" },
-  { value: "100+", label: "Career Transitions" },
-];
-
 const Home = () => {
   const featuredCourses = courses.filter((c) => c.featured).slice(0, 6);
   const featuredTestimonials = testimonials;
 
   // Heading Badge Component for consistency
   const SectionBadge = ({ children }) => (
-    <span className="inline-block px-10 py-4 bg-[#fff8e1] text-[#ffc107] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm border border-[#ffecb3]">
+    <span className="inline-block px-10 py-4 bg-[#fff8e1] text-[#ffc107] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm border border-[#ffecb3] font-sans">
       {children}
     </span>
   );
@@ -64,15 +57,17 @@ const Home = () => {
         <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left order-2 lg:order-1">
-              <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-6 animate-fade-in">
+              <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-6 animate-fade-in font-sans">
                 #1 DevOps Training Institute in Hyderabad
               </span>
               
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              {/* Heading: Remains Serif as per previous request */}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-serif text-primary-foreground mb-6 leading-tight animate-fade-in whitespace-nowrap" style={{ animationDelay: "0.1s" }}>
                 Learn, Grow and <span className="text-gradient-gold">Succeed</span>
               </h1>
 
-              <div className="text-base md:text-lg text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
+              {/* Information text: Changed to font-sans */}
+              <div className="text-base md:text-lg font-sans text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
                 <p>
                   Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices. Our industry expert trainers mentor students and professionals to master the latest technologies and achieve strong placement outcomes.
                 </p>
@@ -95,7 +90,7 @@ const Home = () => {
 
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.4s" }}>
                 <Link to="/courses">
-                  <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-gold">
+                  <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-gold font-sans">
                     Explore Courses
                   </Button>
                 </Link>
@@ -115,11 +110,12 @@ const Home = () => {
       <section className="py-16 md:py-28 bg-background">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>About RCG</SectionBadge>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-12 tracking-tight">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold font-serif text-foreground mb-12 tracking-tight">
             Elevate Your Career with <span className="text-accent">Rudra's Cloud Gurukul</span>
           </h2>
           <div className="grid lg:grid-cols-1 gap-8 text-left max-w-5xl mx-auto">
-            <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
+            {/* Information text: Changed to font-sans */}
+            <div className="space-y-6 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed">
               <p>
                 Rudra’s Cloud Gurukul offers industry-focused training in cutting-edge technologies such as <strong>DevOps with GCP, AWS and Azure, Power BI, Full Stack Development, Data Science, GenAI</strong> and more. All training programs are designed and delivered by certified professionals with real-time industry experience, helping learners gain strong conceptual knowledge and accelerate their career growth.
               </p>
@@ -138,7 +134,7 @@ const Home = () => {
       <section className="py-16 md:py-28 bg-muted">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Key Highlights</SectionBadge>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight mb-16">
+          <h2 className="text-4xl md:text-5xl font-semibold font-serif text-foreground tracking-tight mb-16">
             What Makes Us Different
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -147,7 +143,8 @@ const Home = () => {
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
                   <item.icon className="w-6 h-6 text-accent group-hover:text-white" />
                 </div>
-                <p className="text-base md:text-lg text-foreground font-semibold leading-snug">{item.label}</p>
+                {/* Highlights labels: Changed to font-sans */}
+                <p className="text-base md:text-lg font-sans text-foreground font-medium leading-snug">{item.label}</p>
               </div>
             ))}
           </div>
@@ -155,10 +152,10 @@ const Home = () => {
       </section>
 
       {/* Alumni Section */}
-      <section className="py-16 md:py-20 bg-muted">
+      <section className="py-16 md:py-20 bg-muted border-t">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Our Alumni</SectionBadge>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+          <h2 className="text-3xl md:text-4xl font-semibold font-serif text-foreground mb-12">
             Our Students Work At
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -175,7 +172,7 @@ const Home = () => {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Our Courses</SectionBadge>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+          <h2 className="text-3xl md:text-4xl font-semibold font-serif text-foreground mb-12">
             Featured Courses
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -190,7 +187,7 @@ const Home = () => {
       <section className="py-16 md:py-24 bg-sky/10">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Testimonials</SectionBadge>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+          <h2 className="text-3xl md:text-4xl font-semibold font-serif text-foreground mb-12">
             What Our Students Say
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -204,15 +201,16 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-[#fab400]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-[#0a192f] mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold font-serif text-[#0a192f] mb-4">
             Ready to Start Your Career Journey?
           </h2>
-          <p className="text-white text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-bold drop-shadow-sm">
+          {/* CTA paragraph: Changed to font-sans */}
+          <p className="text-white text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-sans font-medium drop-shadow-sm">
             Join thousands of successful professionals who transformed their careers
             with Rudra's Cloud Gurukul.
           </p>
           <Link to="/get-started">
-            <Button size="lg" className="bg-[#0a192f] text-white hover:bg-[#0a192f]/90 font-bold px-10 py-6 text-lg rounded-xl">
+            <Button size="lg" className="bg-[#0a192f] text-white hover:bg-[#0a192f]/90 font-bold px-10 py-6 text-lg rounded-xl font-sans">
               Get Started Now <ArrowRight className="ml-2 w-6 h-6" />
             </Button>
           </Link>

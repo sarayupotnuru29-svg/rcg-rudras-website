@@ -16,15 +16,19 @@ const Courses = () => {
       {/* Hero */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-secondary to-navy-dark">
         <div className="container mx-auto px-4 text-center">
-          {/* Increased text size to 3xl/5xl and made it bold */}
-          <span className="inline-block px-8 py-4 bg-accent/20 text-accent rounded-full text-3xl md:text-5xl font-bold mb-8">
+          {/* Brightened Badge: increased opacity/contrast */}
+          <span className="inline-block px-8 py-4 bg-accent/30 text-accent rounded-full text-3xl md:text-5xl font-bold mb-8 font-sans drop-shadow-md">
             Our Courses
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-6">
+          
+          {/* Main Heading: Set to pure white for maximum brightness */}
+          <h1 className="text-3xl md:text-5xl font-semibold font-serif text-white mb-6">
             Transform Your Career with{" "}
             <span className="text-gradient-gold">Industry-Ready Skills</span>
           </h1>
-          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
+
+          {/* Descriptive text: Changed from 80% opacity to 100% white for clarity */}
+          <p className="text-lg font-sans text-white max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
             Choose from our comprehensive range of courses designed by industry
             experts. Each course includes hands-on projects, mentorship, and
             placement support.
@@ -40,10 +44,10 @@ const Courses = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 font-sans ${
                   activeCategory === category.id
-                    ? "bg-accent text-accent-foreground shadow-gold"
-                    : "bg-card text-foreground hover:bg-accent/10 border border-border"
+                    ? "bg-accent text-accent-foreground shadow-gold scale-105"
+                    : "bg-card text-foreground hover:bg-accent hover:text-white border border-border"
                 }`}
               >
                 {category.label}
@@ -64,7 +68,7 @@ const Courses = () => {
 
           {filteredCourses.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">
+              <p className="text-foreground font-sans font-medium">
                 No courses found in this category.
               </p>
             </div>
@@ -76,7 +80,7 @@ const Courses = () => {
       <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold font-serif text-foreground mb-4">
               Why Choose Our Courses?
             </h2>
           </div>
@@ -102,12 +106,16 @@ const Courses = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-card p-6 rounded-xl border border-border text-center hover:shadow-lg transition-all duration-300"
+                className="bg-card p-6 rounded-xl border border-border text-center hover:shadow-xl hover:border-accent transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                {/* Feature titles: Set to full foreground (darker/brighter contrast) */}
+                <h3 className="text-lg font-black font-sans text-foreground mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                {/* Feature description: Removed 'muted' for higher readability */}
+                <p className="text-sm font-sans text-foreground/90 font-medium leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>

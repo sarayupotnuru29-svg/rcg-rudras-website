@@ -74,7 +74,8 @@ const Contact = () => {
             <span className="uppercase tracking-widest text-[#F4B41A] font-bold text-sm mb-2 block">
               GET IN TOUCH
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            {/* Main Heading: Contact Us (Applied font-serif and semibold weight) */}
+            <h1 className="text-5xl md:text-6xl font-serif font-semibold mb-6">
               Contact Us
             </h1>
             <p className="text-lg text-blue-100/80 max-w-2xl mx-auto">
@@ -96,7 +97,8 @@ const Contact = () => {
                   {info.icon}
                 </div>
 
-                <h3 className="text-xl font-bold mb-4">{info.title}</h3>
+                {/* Grid Headings: Visit Us, WhatsApp, Instagram, etc. (Applied font-serif and semibold) */}
+                <h3 className="text-xl font-serif font-semibold mb-4">{info.title}</h3>
 
                 <div className="mb-8 min-h-[60px] flex items-center justify-center text-blue-100/90">
                   {info.content}

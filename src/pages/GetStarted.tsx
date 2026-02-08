@@ -6,32 +6,34 @@ const GetStarted = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-secondary to-navy-dark relative overflow-hidden">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-secondary to-navy-dark py-16 md:py-24">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-20 w-64 h-64 bg-accent rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-20 w-80 h-80 bg-accent rounded-full blur-3xl" />
+          <div className="absolute right-20 top-10 h-64 w-64 rounded-full bg-accent blur-3xl" />
+          <div className="absolute bottom-10 left-20 h-80 w-80 rounded-full bg-accent blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container relative z-10 mx-auto px-4">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              {/* INCREASED FONT SIZE FOR BADGE */}
-              <span className="inline-block px-6 py-2 bg-accent/20 text-accent rounded-full text-base md:text-lg font-bold mb-6">
-                Get Started
+              {/* Heading Label: Serif */}
+              <span className="mb-6 inline-block rounded-full bg-accent/20 px-6 py-2 font-serif text-base font-semibold text-accent md:text-lg">
+                Get Started Today
               </span>
               
-              {/* REDUCED FONT SIZE & WHITESPACE-NOWRAP FOR SINGLE LINE */}
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-6 whitespace-nowrap">
+              {/* Main Hero Heading: Serif */}
+              <h1 className="mb-6 font-serif text-2xl font-semibold leading-tight text-primary-foreground md:text-3xl lg:text-4xl">
                 Begin Your Journey to{" "}
                 <span className="text-gradient-gold">Success</span>
               </h1>
 
-              <p className="text-lg text-primary-foreground/80 mb-8">
+              {/* Informational Paragraph: font-sans */}
+              <p className="mb-8 font-sans text-lg leading-relaxed text-primary-foreground/80">
                 Fill out the form and take the first step towards transforming
                 your career. Our team will get back to you within 24 hours.
               </p>
 
+              {/* Checkbox List Items: font-sans */}
               <div className="space-y-4">
                 {[
                   "Free career counseling session",
@@ -41,10 +43,12 @@ const GetStarted = () => {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 justify-center lg:justify-start"
+                    className="flex items-center justify-center gap-3 lg:justify-start"
                   >
-                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span className="text-primary-foreground/90">{item}</span>
+                    <CheckCircle className="h-5 w-5 flex-shrink-0 text-accent" />
+                    <span className="font-sans font-medium text-primary-foreground/90">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -59,15 +63,16 @@ const GetStarted = () => {
       </section>
 
       {/* FAQ Preview */}
-      <section className="py-16 md:py-20 bg-background">
+      <section className="bg-background py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-12 text-center">
+            {/* Section Heading: Serif */}
+            <h2 className="mb-4 font-serif text-3xl font-semibold text-foreground md:text-4xl">
               Frequently Asked Questions
             </h2>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="mx-auto max-w-3xl space-y-4">
             {[
               {
                 q: "What is the duration of the courses?",
@@ -88,10 +93,16 @@ const GetStarted = () => {
             ].map((faq, index) => (
               <div
                 key={index}
-                className="bg-card rounded-xl border border-border p-6"
+                className="rounded-xl border border-border bg-card p-6 shadow-sm"
               >
-                <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                <p className="text-muted-foreground text-sm">{faq.a}</p>
+                {/* FAQ Question: font-sans with extra weight */}
+                <h3 className="mb-2 font-sans text-lg font-bold text-foreground">
+                  {faq.q}
+                </h3>
+                {/* FAQ Answer: font-sans */}
+                <p className="font-sans text-sm leading-relaxed text-muted-foreground">
+                  {faq.a}
+                </p>
               </div>
             ))}
           </div>
