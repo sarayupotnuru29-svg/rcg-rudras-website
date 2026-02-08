@@ -13,21 +13,18 @@ const Courses = () => {
 
   return (
     <Layout>
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-secondary to-navy-dark">
         <div className="container mx-auto px-4 text-center">
-          {/* Brightened Badge: increased opacity/contrast */}
           <span className="inline-block px-8 py-4 bg-accent/30 text-accent rounded-full text-3xl md:text-5xl font-bold mb-8 font-sans drop-shadow-md">
             Our Courses
           </span>
           
-          {/* Main Heading: Set to pure white for maximum brightness */}
           <h1 className="text-3xl md:text-5xl font-semibold font-serif text-white mb-6">
             Transform Your Career with{" "}
             <span className="text-gradient-gold">Industry-Ready Skills</span>
           </h1>
 
-          {/* Descriptive text: Changed from 80% opacity to 100% white for clarity */}
           <p className="text-lg font-sans text-white max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
             Choose from our comprehensive range of courses designed by industry
             experts. Each course includes hands-on projects, mentorship, and
@@ -60,8 +57,11 @@ const Courses = () => {
       {/* Courses Grid */}
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredCourses.map((course) => (
+              /* NOTE: The visual "darkening" of subtitles happens 
+                 inside the CourseCard component using the 'course.subtitle' prop.
+              */
               <CourseCard key={course.id} course={course} />
             ))}
           </div>
@@ -108,12 +108,10 @@ const Courses = () => {
                 key={index}
                 className="bg-card p-6 rounded-xl border border-border text-center hover:shadow-xl hover:border-accent transition-all duration-300"
               >
-                {/* Feature titles: Set to full foreground (darker/brighter contrast) */}
                 <h3 className="text-lg font-black font-sans text-foreground mb-2">
                   {item.title}
                 </h3>
-                {/* Feature description: Removed 'muted' for higher readability */}
-                <p className="text-sm font-sans text-foreground/90 font-medium leading-relaxed">
+                <p className="text-sm font-sans text-foreground font-bold leading-relaxed">
                   {item.description}
                 </p>
               </div>
