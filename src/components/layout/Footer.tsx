@@ -455,10 +455,11 @@
 
 // export default Footer;
 
-
 import { Link } from "react-router-dom";
-import { Instagram, Linkedin, MessageCircle, Heart, Youtube } from "lucide-react";
+import { Instagram, Linkedin, Heart, Youtube } from "lucide-react";
+// 1. Properly import both logos so the build tool (Vite/Vercel) tracks them
 import logo from "@/assets/newlogorcg.png";
+import staffArcLogo from "@/assets/Staffarc-logo.png"; 
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -468,7 +469,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/10">
       <div className="container mx-auto px-4 py-12">
-        {/* Main Footer Row: Logo | Quick Links | Socials */}
+        {/* Main Footer Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
           
           {/* Brand/Logo Section */}
@@ -478,7 +479,7 @@ const Footer = () => {
               alt="RCG Rudra's Cloud Gurukul"
               className="h-14 w-auto mb-2"
             />
-            <p className="text-xs italic text-primary-foreground/70">
+            <p className="text-xs italic text-primary-foreground/70 font-sans">
               Your Cloud Journey Starts Here...
             </p>
           </div>
@@ -498,7 +499,7 @@ const Footer = () => {
                   <Link
                     to={link.path}
                     onClick={scrollToTop}
-                    className="text-sm font-medium text-primary-foreground/80 hover:text-accent transition-colors underline-offset-4 hover:underline"
+                    className="text-sm font-medium font-sans text-primary-foreground/80 hover:text-accent transition-colors underline-offset-4 hover:underline"
                   >
                     {link.name}
                   </Link>
@@ -512,7 +513,7 @@ const Footer = () => {
             <a
               href="#"
               target="_blank"
-              className="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center hover:scale-110 transition-transform"
+              className="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
               aria-label="YouTube"
             >
               <Youtube className="w-5 h-5" />
@@ -522,7 +523,7 @@ const Footer = () => {
               href="https://www.instagram.com/rudrascloud"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center hover:scale-110 transition-transform"
+              className="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />
@@ -531,7 +532,7 @@ const Footer = () => {
             <a
               href="https://www.linkedin.com/in/rudra-s-cloud-gurukul-5b54243aa"
               target="_blank"
-              className="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center hover:scale-110 transition-transform"
+              className="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
@@ -543,29 +544,28 @@ const Footer = () => {
         <hr className="my-8 border-primary-foreground/10" />
 
         {/* Copyright and Attribution */}
-        <div className="flex flex-col items-center space-y-4 text-primary-foreground/60 text-sm">
-          <p>
+        <div className="flex flex-col items-center space-y-4 text-primary-foreground text-sm">
+          <p className="font-sans opacity-80">
             © {new Date().getFullYear()} RCG Rudra's Cloud Gurukul. All rights reserved.
           </p>
           
-          {/* Reference Image Styled Attribution with Logo */}
           <div className="flex items-center justify-center text-base font-medium">
-            <span className="text-white/80">Made with</span>
+            <span className="text-white font-sans">Made with</span>
             <Heart className="inline h-5 w-5 text-[#FF4D4D] mx-2 fill-[#FF4D4D]" />
-            <span className="text-white/80 mr-2">by</span>
+            <span className="text-white font-sans mr-2">by</span>
             <a
               href="https://staffarc.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 group transition-opacity hover:opacity-80"
+              className="flex items-center gap-2 group transition-all"
             >
-              {/* StaffArc Logo Implementation */}
+              {/* 2. Use the imported variable instead of a string path */}
               <img 
-                src="src/assets/Staffarc-logo.png" // REPLACE WITH YOUR LOCAL LOGO PATH
+                src={staffArcLogo} 
                 alt="StaffArc Logo" 
-                className="h-6 w-auto"
+                className="h-6 w-auto brightness-110"
               />
-              <span className="font-bold text-[#FF7A00] text-lg">StaffArc</span>
+              <span className="font-black text-[#FF7A00] text-lg font-sans drop-shadow-sm">StaffArc</span>
             </a>
           </div>
         </div>
