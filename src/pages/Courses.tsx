@@ -16,16 +16,17 @@ const Courses = () => {
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-secondary to-navy-dark">
         <div className="container mx-auto px-4 text-center">
-          <span className="inline-block px-8 py-4 bg-accent/30 text-accent rounded-full text-3xl md:text-5xl font-bold mb-8 font-sans drop-shadow-md">
+          {/* Label Font Size */}
+          <span className="inline-block px-6 py-2 bg-accent/30 text-accent rounded-full text-xl md:text-2xl font-bold mb-6 font-sans drop-shadow-md">
             Our Courses
           </span>
           
-          <h1 className="text-3xl md:text-5xl font-semibold font-serif text-white mb-6">
-            Transform Your Career with{" "}
-            <span className="text-gradient-gold">Industry-Ready Skills</span>
+          {/* Main Heading: Entire line set to yellow (text-accent) */}
+          <h1 className="text-2xl md:text-4xl font-semibold font-serif text-accent mb-6">
+            Transform Your Career with Industry-Ready Skills
           </h1>
 
-          <p className="text-lg font-sans text-white max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+          <p className="text-base md:text-lg font-sans text-white max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
             Choose from our comprehensive range of courses designed by industry
             experts. Each course includes hands-on projects, mentorship, and
             placement support.
@@ -59,9 +60,6 @@ const Courses = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredCourses.map((course) => (
-              /* NOTE: The visual "darkening" of subtitles happens 
-                 inside the CourseCard component using the 'course.subtitle' prop.
-              */
               <CourseCard key={course.id} course={course} />
             ))}
           </div>

@@ -5,8 +5,9 @@ import { CheckCircle } from "lucide-react";
 const GetStarted = () => {
   return (
     <Layout>
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-secondary to-navy-dark py-16 md:py-24">
+        {/* Decorative background blurs */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute right-20 top-10 h-64 w-64 rounded-full bg-accent blur-3xl" />
           <div className="absolute bottom-10 left-20 h-80 w-80 rounded-full bg-accent blur-3xl" />
@@ -14,26 +15,27 @@ const GetStarted = () => {
 
         <div className="container relative z-10 mx-auto px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
+            
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              {/* Heading Label: Serif */}
-              <span className="mb-6 inline-block rounded-full bg-accent/20 px-6 py-2 font-serif text-base font-semibold text-accent md:text-lg">
+              {/* Heading Label */}
+              <span className="mb-4 inline-block rounded-full bg-accent/20 px-6 py-2 font-serif text-base font-semibold text-accent md:text-lg">
                 Get Started Today
               </span>
               
-              {/* Main Hero Heading: Serif */}
-              <h1 className="mb-6 font-serif text-2xl font-semibold leading-tight text-primary-foreground md:text-3xl lg:text-4xl">
+              {/* Main Hero Heading: Font size reduced to text-4xl on large screens */}
+              <h1 className="mb-6 font-serif text-2xl font-semibold leading-tight text-primary-foreground md:text-3xl lg:text-4xl whitespace-nowrap">
                 Begin Your Journey to{" "}
                 <span className="text-gradient-gold">Success</span>
               </h1>
 
-              {/* Informational Paragraph: font-sans */}
-              <p className="mb-8 font-sans text-lg leading-relaxed text-primary-foreground/80">
+              {/* Informational Paragraph */}
+              <p className="mb-8 font-sans text-lg leading-relaxed text-primary-foreground/80 max-w-md mx-auto lg:mx-0">
                 Fill out the form and take the first step towards transforming
                 your career. Our team will get back to you within 24 hours.
               </p>
 
-              {/* Checkbox List Items: font-sans */}
+              {/* Checkbox List Items */}
               <div className="space-y-4">
                 {[
                   "Free career counseling session",
@@ -54,22 +56,25 @@ const GetStarted = () => {
               </div>
             </div>
 
-            {/* Right Form */}
-            <div>
-              <EnquiryForm />
+            {/* Right Form - Positioned slightly more to the left on large screens */}
+            <div className="flex justify-center lg:justify-start lg:pl-8">
+              <div className="w-full max-w-lg">
+                <EnquiryForm />
+              </div>
             </div>
+            
           </div>
         </div>
       </section>
 
-      {/* FAQ Preview */}
+      {/* FAQ Preview Section */}
       <section className="bg-background py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            {/* Section Heading: Serif */}
             <h2 className="mb-4 font-serif text-3xl font-semibold text-foreground md:text-4xl">
-              Frequently Asked Questions
+              Frequently Asked <span className="text-gradient-gold">Questions</span>
             </h2>
+            <div className="mx-auto mt-2 h-1 w-24 rounded-full bg-accent/30" />
           </div>
 
           <div className="mx-auto max-w-3xl space-y-4">
@@ -93,13 +98,11 @@ const GetStarted = () => {
             ].map((faq, index) => (
               <div
                 key={index}
-                className="rounded-xl border border-border bg-card p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                {/* FAQ Question: font-sans with extra weight */}
                 <h3 className="mb-2 font-sans text-lg font-bold text-foreground">
                   {faq.q}
                 </h3>
-                {/* FAQ Answer: font-sans */}
                 <p className="font-sans text-sm leading-relaxed text-muted-foreground">
                   {faq.a}
                 </p>

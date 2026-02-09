@@ -1,9 +1,9 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { 
-  MessageCircle, Instagram, Linkedin, Users, Trophy, Briefcase, 
-  GraduationCap, Clock, TrendingUp, Building2, ArrowRight, 
-  BookOpen, Target, Laptop, Headphones, UserCheck, Search, 
-  Calendar, Award, Star, ShieldCheck
+  Users, Trophy, Briefcase, GraduationCap, Clock, TrendingUp, 
+  ArrowRight, BookOpen, UserCheck, 
+  Search, Award, DollarSign, Zap, ChevronLeft, ChevronRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
@@ -13,7 +13,6 @@ import TestimonialCard from "@/components/testimonials/TestimonialCard";
 import { courses } from "@/lib/courses";
 import { testimonials } from "@/lib/testimonials";
 import { companies } from "@/lib/companies";
-import { openWhatsApp } from "@/lib/whatsapp";
 
 const highlights = [
   { icon: Users, label: "Interactive live virtual classes conducted by industry/working professionals" },
@@ -22,25 +21,38 @@ const highlights = [
   { icon: TrendingUp, label: "Dedicated assistance for career transition and job switch" },
   { icon: GraduationCap, label: "Personalized 1:1 mentorship from experienced industry experts" },
   { icon: Briefcase, label: "Access to 50+ real-world industry projects and case studies" },
-  { icon: Laptop, label: "Complimentary access to integrated hands-on lab environments" },
-  { icon: Target, label: "Exclusive career guidance sessions and placement support services" },
-  { icon: Headphones, label: "Round-the-clock (24/7) learner support" },
   { icon: UserCheck, label: "Designed for both technical and non-technical graduates" },
-  { icon: Star, label: "Dedicated learning management and student success team" },
-  { icon: Calendar, label: "Regular revision and doubt-clearing sessions on weekdays and weekends" },
   { icon: Search, label: "Comprehensive mock interview preparation sessions" },
   { icon: Award, label: "Core soft skills and professional development training" },
   { icon: Trophy, label: "100% job placement assistance support" },
-  { icon: ShieldCheck, label: "Flexible learning schedule with continued placement support" },
 ];
 
 const Home = () => {
-  const featuredCourses = courses.filter((c) => c.featured).slice(0, 6);
-  const featuredTestimonials = testimonials;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const itemsPerPage = 3;
+  const totalSlides = Math.max(0, testimonials.length - itemsPerPage + 1);
 
-  // Heading Badge Component for consistency
-  const SectionBadge = ({ children }) => (
-    <span className="inline-block px-10 py-4 bg-[#fff8e1] text-[#ffc107] rounded-full text-xl md:text-2xl font-black mb-10 shadow-sm border border-[#ffecb3] font-sans">
+  const featuredCourses = courses.filter((c) => c.featured).slice(0, 6);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1 >= totalSlides ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+
+  useEffect(() => {
+    if (isPaused || totalSlides <= 1) return;
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [isPaused, currentIndex, totalSlides]);
+
+  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + itemsPerPage);
+
+  const SectionBadge = ({ children }: { children: React.ReactNode }) => (
+    <span className="inline-block px-8 py-2 bg-[#0a192f] text-[#fab400] rounded-full text-lg md:text-xl font-bold mb-6 shadow-lg font-serif">
       {children}
     </span>
   );
@@ -48,46 +60,29 @@ const Home = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-primary via-secondary to-navy-dark">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-primary via-secondary to-navy-dark">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl" />
+          <div className="absolute top-10 left-10 w-64 h-64 bg-accent rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent rounded-full blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="container mx-auto px-4 py-8 md:py-12 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="text-center lg:text-left order-2 lg:order-1">
-              <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-6 animate-fade-in font-sans">
+              <span className="inline-block px-4 py-1 bg-accent/20 text-accent rounded-full text-xs font-medium mb-4 animate-fade-in font-sans">
                 #1 DevOps Training Institute in Hyderabad
               </span>
-              
-              {/* Heading: Remains Serif as per previous request */}
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-serif text-primary-foreground mb-6 leading-tight animate-fade-in whitespace-nowrap" style={{ animationDelay: "0.1s" }}>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold font-serif text-primary-foreground mb-4 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 Learn, Grow and <span className="text-gradient-gold">Succeed</span>
               </h1>
-
-              {/* Information text: Changed to font-sans */}
-              <div className="text-base md:text-lg font-sans text-primary-foreground/80 mb-8 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
+              <div className="text-base font-sans text-primary-foreground/80 mb-6 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
                 <p>
-                  Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices. Our industry expert trainers mentor students and professionals to master the latest technologies and achieve strong placement outcomes.
+                  Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices. Our industry expert trainers, mentor students and professionals to master the latest technologies and achieve strong placement outcomes.
                 </p>
-                <p className="hidden md:block">
-                  Recognized as one of the best DevOps training institutes in Hyderabad, we deliver a well-structured course with hands-on experience and personalized one-to-one guidance suitable for beginners and IT professionals.
+                <p>
+                  Recognized as one of the best DevOps training institutes in Hyderabad, Rudra’s Cloud Gurukul delivers a well-structured DevOps course with hands-on experience, real-time scenarios, and personalized one-to-one guidance. Our training is suitable for beginners and experienced IT professionals alike.
                 </p>
               </div>
-
-              <div className="flex gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                <button onClick={openWhatsApp} className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center hover:scale-110 transition-transform">
-                  <MessageCircle className="w-6 h-6" />
-                </button>
-                <a href="https://www.instagram.com/rudrascloud" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white flex items-center justify-center hover:scale-110 transition-transform">
-                  <Instagram className="w-6 h-6" />
-                </a>
-                <a href="https://www.linkedin.com/in/rudra-s-cloud-gurukul-5b54243aa" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform">
-                  <Linkedin className="w-6 h-6" />
-                </a>
-              </div>
-
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.4s" }}>
                 <Link to="/courses">
                   <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-gold font-sans">
@@ -96,9 +91,8 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-
             <div className="order-1 lg:order-2 animate-slide-in-right flex justify-center lg:justify-end">
-              <div className="w-full max-w-[400px]">
+              <div className="w-full max-w-[380px]">
                 <DemoForm />
               </div>
             </div>
@@ -106,45 +100,59 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About RCG Section */}
-      <section className="py-16 md:py-28 bg-background">
+      {/* About Us Section */}
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 text-center">
-          <SectionBadge>About RCG</SectionBadge>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold font-serif text-foreground mb-12 tracking-tight">
+          <SectionBadge>About Us</SectionBadge>
+          <h2 className="text-2xl md:text-3xl font-semibold font-serif text-foreground mb-8 tracking-tight">
             Elevate Your Career with <span className="text-accent">Rudra's Cloud Gurukul</span>
           </h2>
-          <div className="grid lg:grid-cols-1 gap-8 text-left max-w-5xl mx-auto">
-            {/* Information text: Changed to font-sans */}
-            <div className="space-y-6 text-lg md:text-xl font-sans text-muted-foreground leading-relaxed">
-              <p>
-                Rudra’s Cloud Gurukul offers industry-focused training in cutting-edge technologies such as <strong>DevOps with GCP, AWS and Azure, Power BI, Full Stack Development, Data Science, GenAI</strong> and more. All training programs are designed and delivered by certified professionals with real-time industry experience, helping learners gain strong conceptual knowledge and accelerate their career growth.
-              </p>
-              <p>
-                With an updated, skill-driven, role-based curriculum and hands-on learning approach, our programs are ideal for both students and working professionals looking to upskill and achieve their career goals. Rudra’s Cloud Gurukul is committed to delivering a high-quality classroom and live online training experience that prepares learners for real-world challenges.
-              </p>
-              <p className="border-l-4 border-accent pl-6 py-2 italic bg-muted/50 rounded-r-lg">
-                The DevOps course covers core concepts, GCP DevOps, AWS DevOps and popular tools such as <strong>Jenkins, Docker, Kubernetes, Git, Maven, Ansible, and Chef</strong>. With comprehensive online and classroom options, Rudra’s Cloud Gurukul helps you gain job-ready skills and succeed in today’s competitive IT market.
-              </p>
-            </div>
+          <div className="max-w-5xl mx-auto text-left space-y-6 text-base md:text-lg font-sans text-muted-foreground leading-relaxed">
+            <p>
+              Rudra’s Cloud Gurukul offers industry-focused training in cutting-edge technologies such as DevOps with GCP, AWS and Azure, Power BI, Full Stack Development, Data Science, GenAI and more. All training programs are designed and delivered by certified professionals with real-time industry experience, helping learners gain strong conceptual knowledge and accelerate their career growth.
+            </p>
+            <p>
+              With an updated, skill-driven, role-based curriculum and hands-on learning approach, our programs are ideal for both students and working professionals looking to upskill and achieve their career goals. Rudra’s Cloud Gurukul is committed to delivering a high-quality classroom and live online training experience that prepares learners for real-world challenges.
+            </p>
+            <p className="border-l-4 border-accent pl-6 py-2 bg-muted/50 rounded-r-lg">
+              The DevOps course covers core concepts, GCP DevOps, AWS DevOps and popular tools such as Jenkins, Docker, Kubernetes, Git, Maven, Ansible, and Chef. With comprehensive online and classroom options, Rudra’s Cloud Gurukul helps you gain job-ready skills and succeed in today’s competitive IT market.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Key Highlights */}
-      <section className="py-16 md:py-28 bg-muted">
+      {/* Key Highlights Section */}
+      <section className="py-12 md:py-16 bg-muted">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Key Highlights</SectionBadge>
-          <h2 className="text-4xl md:text-5xl font-semibold font-serif text-foreground tracking-tight mb-16">
-            What Makes Us Different
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 mt-12">
             {highlights.map((item, index) => (
-              <div key={index} className="flex flex-col items-center text-center gap-4 p-6 bg-card rounded-2xl border border-border hover:shadow-xl transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+              <div key={index} className="flex flex-col items-center text-center p-5 bg-card rounded-2xl border border-border hover:shadow-lg transition-all duration-300 group">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors mb-4">
                   <item.icon className="w-6 h-6 text-accent group-hover:text-white" />
                 </div>
-                {/* Highlights labels: Changed to font-sans */}
-                <p className="text-base md:text-lg font-sans text-foreground font-medium leading-snug">{item.label}</p>
+                <p className="text-sm font-sans text-foreground font-medium leading-snug">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Career Transition Section */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <SectionBadge>Career Transition</SectionBadge>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mt-10">
+            {[
+              { icon: TrendingUp, val: "72%", label: "Avg Salary Hike" },
+              { icon: Trophy, val: "38 LPA", label: "Highest Package" },
+              { icon: DollarSign, val: "12 LPA", label: "Average Package" },
+              { icon: Zap, val: "100+", label: "Transitions" }
+            ].map((stat, i) => (
+              <div key={i} className="p-5 bg-navy-dark rounded-xl border border-accent/20 shadow-md flex flex-col items-center">
+                <stat.icon className="w-6 h-6 text-accent mb-4" />
+                <h3 className="text-xl md:text-2xl font-black text-white">{stat.val}</h3>
+                <p className="text-accent/80 text-[10px] font-bold uppercase tracking-widest">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -152,30 +160,31 @@ const Home = () => {
       </section>
 
       {/* Alumni Section */}
-      <section className="py-16 md:py-20 bg-muted border-t">
+      <section className="py-12 md:py-16 bg-muted border-t">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Our Alumni</SectionBadge>
-          <h2 className="text-3xl md:text-4xl font-semibold font-serif text-foreground mb-12">
-            Our Students Work At
+          <h2 className="text-2xl md:text-3xl font-semibold font-serif text-foreground mb-10">
+            Our Students <span className="text-accent">Work At</span>
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {companies.map((company, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 h-20 flex items-center justify-center border border-border shadow-sm">
-                <img src={company.logo} alt={company.name} className="max-h-12 max-w-full object-contain" />
+              <div key={index} className="bg-white rounded-xl p-4 h-24 flex items-center justify-center border border-border shadow-sm hover:shadow-md transition-shadow">
+                <img 
+                  src={company.logo} 
+                  alt={company.name} 
+                  className="max-h-12 w-full object-contain" 
+                />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Courses */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* Courses Section */}
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Our Courses</SectionBadge>
-          <h2 className="text-3xl md:text-4xl font-semibold font-serif text-foreground mb-12">
-            Featured Courses
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {featuredCourses.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
@@ -183,35 +192,52 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-sky/10">
+      {/* Testimonials Slider */}
+      <section className="py-12 md:py-16 bg-sky/10">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Testimonials</SectionBadge>
-          <h2 className="text-3xl md:text-4xl font-semibold font-serif text-foreground mb-12">
-            What Our Students Say
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredTestimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-            ))}
+          <div 
+            className="relative max-w-7xl mx-auto px-10 mt-10"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <button onClick={prevSlide} className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-accent hover:text-white transition-all z-20">
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button onClick={nextSlide} className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-accent hover:text-white transition-all z-20">
+              <ChevronRight className="w-6 h-6" />
+            </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {visibleTestimonials.map((testimonial) => (
+                <div key={testimonial.id} className="animate-fade-in transition-opacity duration-500">
+                  <TestimonialCard testimonial={testimonial} />
+                </div>
+              ))}
+            </div>
+            {totalSlides > 1 && (
+              <div className="flex justify-center mt-8 gap-2">
+                {Array.from({ length: totalSlides }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentIndex(i)}
+                    className={`h-2 rounded-full transition-all duration-300 ${currentIndex === i ? "w-8 bg-accent" : "w-2 bg-slate-300"}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-[#fab400]">
+      <section className="py-12 md:py-16 bg-[#fab400]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold font-serif text-[#0a192f] mb-4">
+          <h2 className="text-2xl md:text-3xl font-semibold font-serif text-[#0a192f] mb-6">
             Ready to Start Your Career Journey?
           </h2>
-          {/* CTA paragraph: Changed to font-sans */}
-          <p className="text-white text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-sans font-medium drop-shadow-sm">
-            Join thousands of successful professionals who transformed their careers
-            with Rudra's Cloud Gurukul.
-          </p>
           <Link to="/get-started">
-            <Button size="lg" className="bg-[#0a192f] text-white hover:bg-[#0a192f]/90 font-bold px-10 py-6 text-lg rounded-xl font-sans">
-              Get Started Now <ArrowRight className="ml-2 w-6 h-6" />
+            <Button size="lg" className="bg-[#0a192f] text-white hover:bg-[#0a192f]/90 font-bold px-8 py-4 text-base rounded-xl font-sans">
+              Get Started Now <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
         </div>
