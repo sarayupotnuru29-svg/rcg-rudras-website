@@ -59,23 +59,28 @@ const Home = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-primary via-secondary to-navy-dark">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-accent rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent rounded-full blur-3xl" />
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ 
+              backgroundImage: `url('/hero-bg.jpg')`, 
+            }}
+          />
+          <div className="absolute inset-0 bg-[#0a192f]/85 backdrop-blur-[2px]" />
         </div>
 
         <div className="container mx-auto px-4 py-8 md:py-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
             <div className="text-center lg:text-left order-2 lg:order-1">
               <span className="inline-block px-4 py-1 bg-accent/20 text-accent rounded-full text-xs font-medium mb-4 animate-fade-in font-sans">
                 #1 DevOps Training Institute in Hyderabad
               </span>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold font-serif text-primary-foreground mb-4 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                Learn, Grow and <span className="text-gradient-gold">Succeed</span>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-[#fab400] mb-4 leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
+                Learn, Grow and Succeed
               </h1>
-              <div className="text-base font-sans text-primary-foreground/80 mb-6 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
+              <div className="text-base font-sans text-gray-200 mb-6 leading-relaxed animate-fade-in space-y-4" style={{ animationDelay: "0.2s" }}>
                 <p>
                   Rudra’s Cloud Gurukul is a leading software training institute in Hyderabad, offering high-quality classroom and live online training with real-time projects at affordable prices. Our industry expert trainers, mentor students and professionals to master the latest technologies and achieve strong placement outcomes.
                 </p>
@@ -85,13 +90,13 @@ const Home = () => {
               </div>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.4s" }}>
                 <Link to="/courses">
-                  <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-gold font-sans">
+                  <Button size="lg" className="bg-[#fab400] text-[#0a192f] hover:bg-[#fab400]/90 font-semibold shadow-gold font-sans">
                     Explore Courses
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="order-1 lg:order-2 animate-slide-in-right flex justify-center lg:justify-end">
+            <div className="order-1 lg:order-2 animate-slide-in-right flex justify-center lg:justify-start">
               <div className="w-full max-w-[380px]">
                 <DemoForm />
               </div>
@@ -125,6 +130,9 @@ const Home = () => {
       <section className="py-12 md:py-16 bg-muted">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Key Highlights</SectionBadge>
+          <h2 className="text-2xl md:text-3xl font-semibold font-serif text-foreground mb-4">
+            What Makes Us <span className="text-accent">Different</span>
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 mt-12">
             {highlights.map((item, index) => (
               <div key={index} className="flex flex-col items-center text-center p-5 bg-card rounded-2xl border border-border hover:shadow-lg transition-all duration-300 group">
@@ -142,6 +150,10 @@ const Home = () => {
       <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Career Transition</SectionBadge>
+          {/* UPDATED HEADING COLORS */}
+          <h2 className="text-2xl md:text-3xl font-semibold font-serif mb-4">
+            <span className="text-[#0a192f]">Our Success</span> <span className="text-[#fab400]">Stories</span>
+          </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mt-10">
             {[
               { icon: TrendingUp, val: "72%", label: "Avg Salary Hike" },
@@ -149,10 +161,10 @@ const Home = () => {
               { icon: DollarSign, val: "12 LPA", label: "Average Package" },
               { icon: Zap, val: "100+", label: "Transitions" }
             ].map((stat, i) => (
-              <div key={i} className="p-5 bg-navy-dark rounded-xl border border-accent/20 shadow-md flex flex-col items-center">
-                <stat.icon className="w-6 h-6 text-accent mb-4" />
+              <div key={i} className="p-5 bg-[#0a192f] rounded-xl border border-accent/20 shadow-md flex flex-col items-center">
+                <stat.icon className="w-6 h-6 text-[#fab400] mb-4" />
                 <h3 className="text-xl md:text-2xl font-black text-white">{stat.val}</h3>
-                <p className="text-accent/80 text-[10px] font-bold uppercase tracking-widest">{stat.label}</p>
+                <p className="text-[#fab400]/80 text-[10px] font-bold uppercase tracking-widest">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -184,6 +196,9 @@ const Home = () => {
       <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Our Courses</SectionBadge>
+          <h2 className="text-2xl md:text-3xl font-semibold font-serif text-foreground mb-4">
+            Featured <span className="text-accent">Courses</span>
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {featuredCourses.map((course) => (
               <CourseCard key={course.id} course={course} />
@@ -196,6 +211,9 @@ const Home = () => {
       <section className="py-12 md:py-16 bg-sky/10">
         <div className="container mx-auto px-4 text-center">
           <SectionBadge>Testimonials</SectionBadge>
+          <h2 className="text-2xl md:text-3xl font-semibold font-serif text-foreground mb-4">
+            What Our <span className="text-accent">Students Say</span>
+          </h2>
           <div 
             className="relative max-w-7xl mx-auto px-10 mt-10"
             onMouseEnter={() => setIsPaused(true)}
