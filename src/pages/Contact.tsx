@@ -15,7 +15,7 @@
 //         </p>
 //       ),
 //       linkText: "Open Maps →",
-//       link: "https://maps.google.com/?q=Villa+No+263,Jal+Vayu+Vihar,KPHB+Colony,Hyderabad",
+//       link: "https://share.google/LSUhcq8WCqeJ9UA9T",
 //     },
 //     {
 //       title: "Call Us",
@@ -133,14 +133,16 @@
 //       <section className="bg-white py-12">
 //         <div className="container mx-auto px-4">
 //           <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-[#112240]/10">
+//             {/* Embedded map showing Rudra's Cloud Gurukul precisely */}
 //             <iframe
-//               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.275084920404!2d78.39708687516515!3d17.494389983410712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9160533036c1%3A0xc3c9428c067e2a9!2sJal%20Vayu%20Vihar%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500085!5e0!3m2!1sen!2sin!4v1700000000000"
+//               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.2952409746654!2d78.3887031!3d17.4933618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91005187313d%3A0xe5f86580f4886638!2sRudra&#39;s%20Cloud%20Gurukul!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
 //               width="100%"
 //               height="450"
 //               style={{ border: 0 }}
 //               allowFullScreen
 //               loading="lazy"
-//               title="RCG Location"
+//               referrerPolicy="no-referrer-when-downgrade"
+//               title="Rudra's Cloud Gurukul Location"
 //             />
 //           </div>
 //         </div>
@@ -169,7 +171,7 @@ const Contact = () => {
         </p>
       ),
       linkText: "Open Maps →",
-      link: "https://maps.app.goo.gl/LSUhcq8WCqeJ9UA9T",
+      link: "https://share.google/LSUhcq8WCqeJ9UA9T",
     },
     {
       title: "Call Us",
@@ -287,14 +289,16 @@ const Contact = () => {
       <section className="bg-white py-12">
         <div className="container mx-auto px-4">
           <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-[#112240]/10">
+            {/* Embedded map showing Rudra's Cloud Gurukul precisely */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.2751460331086!2d78.39414087595305!3d17.4943890834117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f618843997%3A0xc994e45d58611831!2sJal%20Vayu%20Vihar%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500085!5e0!3m2!1sen!2sin!4v1709191000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.513470129215!2d78.3979053!3d17.4993163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91fecb455085%3A0x62459ed6975b18c4!2sRudra&#39;s%20Cloud%20Gurukul!5e0!3m2!1sen!2sin!4v1741234567890!5m2!1sen!2sin"
               width="100%"
               height="450"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              title="RCG Location"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Rudra's Cloud Gurukul Location"
             />
           </div>
         </div>
