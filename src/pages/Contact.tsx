@@ -135,7 +135,7 @@
 //           <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-[#112240]/10">
 //             {/* Embedded map showing Rudra's Cloud Gurukul precisely */}
 //             <iframe
-//               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.2952409746654!2d78.3887031!3d17.4933618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91005187313d%3A0xe5f86580f4886638!2sRudra&#39;s%20Cloud%20Gurukul!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+//               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.513470129215!2d78.3979053!3d17.4993163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91fecb455085%3A0x62459ed6975b18c4!2sRudra&#39;s%20Cloud%20Gurukul!5e0!3m2!1sen!2sin!4v1741234567890!5m2!1sen!2sin"
 //               width="100%"
 //               height="450"
 //               style={{ border: 0 }}
@@ -242,8 +242,9 @@ const Contact = () => {
             <span className="uppercase tracking-widest text-[#F4B41A] font-bold text-sm mb-2 block">
               GET IN TOUCH
             </span>
+            {/* Updated Heading with Dual Shade */}
             <h1 className="text-5xl md:text-6xl font-serif font-semibold mb-6">
-              Contact Us
+              Contact <span className="text-gradient-gold">Us</span>
             </h1>
             <p className="text-lg text-blue-100/80 max-w-2xl mx-auto">
               Have questions or want to enroll? Reach out through any of our channels.
@@ -291,7 +292,7 @@ const Contact = () => {
           <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-[#112240]/10">
             {/* Embedded map showing Rudra's Cloud Gurukul precisely */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.513470129215!2d78.3979053!3d17.4993163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91fecb455085%3A0x62459ed6975b18c4!2sRudra&#39;s%20Cloud%20Gurukul!5e0!3m2!1sen!2sin!4v1741234567890!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.2415124619736!2d78.3962646!3d17.4878508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb919638706341%3A0xa6f0e386001097e8!2sRudra&#39;s%20Cloud%20Gurukul!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="450"
               style={{ border: 0 }}
