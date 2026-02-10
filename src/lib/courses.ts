@@ -4,8 +4,8 @@ import { Cloud, Database, Code, BarChart3, Layers, Globe, Palette, Workflow, Bra
 import Training from "@/assets/courses/training.avif";
 import gcpDevopsImg from "@/assets/courses/GCP.jpeg";
 import awsDevopsImg from "@/assets/courses/aws.jpeg";
-import azureDevopsImg from "@/assets/courses/azuredevops.png";
-import multiCloudImg from "@/assets/courses/multicloud.png";
+import azureDevopsImg from "@/assets/courses/azurenew.jpeg";
+import multiCloudImg from "@/assets/courses/multicloudnew.jpeg";
 import dataScienceImg from "@/assets/courses/datascience.webp";
 import genaiImg from "@/assets/courses/aidatascience.png";
 import javaFullstackImg from "@/assets/courses/javafullstack.png";

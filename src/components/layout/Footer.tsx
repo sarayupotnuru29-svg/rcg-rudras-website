@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 // import { 
 //   Phone, MapPin, Instagram, MessageCircle, Linkedin, 
-//   Heart, Youtube 
+//   Heart, Youtube, Facebook 
 // } from "lucide-react";
 // import staffArcLogo from "@/assets/Staffarc-logo.png";
 
@@ -33,6 +33,13 @@
 //       link: "https://wa.me/918897999766",
 //     },
 //     {
+//       title: "Facebook",
+//       icon: <Facebook className="w-5 h-5 text-white" />,
+//       iconBg: "bg-[#1877F2]",
+//       content: "Join Community",
+//       link: "https://www.facebook.com/share/1AAaJ116wm/",
+//     },
+//     {
 //       title: "Instagram",
 //       icon: <Instagram className="w-5 h-5 text-white" />,
 //       iconBg: "bg-gradient-to-tr from-[#FFB300] via-[#FF005C] to-[#9C27B0]",
@@ -52,8 +59,8 @@
 //     <footer className="bg-[#112240] text-white pt-16 pb-8 border-t border-white/5">
 //       <div className="container mx-auto px-4 max-w-7xl">
         
-//         {/* Remodeled Contact Pattern Grid - Now at the Top */}
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
+//         {/* Remodeled Contact Pattern Grid - Updated to 6 columns for desktop */}
+//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
 //           {footerContactCards.map((info, index) => (
 //             <a
 //               key={index}
@@ -123,6 +130,7 @@
 
 // export default Footer;
 
+
 import { Link } from "react-router-dom";
 import { 
   Phone, MapPin, Instagram, MessageCircle, Linkedin, 
@@ -184,7 +192,7 @@ const Footer = () => {
     <footer className="bg-[#112240] text-white pt-16 pb-8 border-t border-white/5">
       <div className="container mx-auto px-4 max-w-7xl">
         
-        {/* Remodeled Contact Pattern Grid - Updated to 6 columns for desktop */}
+        {/* Remodeled Contact Pattern Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
           {footerContactCards.map((info, index) => (
             <a
@@ -203,14 +211,14 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Quick Links Row */}
+        {/* Updated Quick Links Row */}
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 py-6 border-y border-white/5">
           {[
             { name: "Home", path: "/" },
-            { name: "About Us", path: "/about" },
             { name: "Courses", path: "/courses" },
-            { name: "Contact", path: "/contact" },
             { name: "Testimonials", path: "/testimonials" },
+            { name: "Get Started", path: "/get-started" },
+            { name: "Contact Us", path: "/contact" },
           ].map((link) => (
             <Link
               key={link.path}

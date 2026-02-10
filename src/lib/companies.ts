@@ -29,7 +29,7 @@ import cognizantLogo from "@/assets/companies/cognizantnew.jpeg";
 
 import oracleLogo from "@/assets/companies/oraclenew.jpeg";
 import techMahindraLogo from "@/assets/companies/technew.jpeg";
-import azureLogo from "@/assets/companies/azurenew.jpeg";
+import kpmgLogo from "@/assets/companies/kpmg.png";
 import pegaLogo from "@/assets/companies/pega.jpeg";
 import daikinLogo from "@/assets/companies/daikin.jpeg";
 import broadcomLogo from "@/assets/companies/broadcom.jpeg";
@@ -78,7 +78,7 @@ export const companies: Company[] = [
   { name: "Cognizant", logo: cognizantLogo },
   
   { name: "Oracle", logo: oracleLogo },
-  { name: "Azure", logo: azureLogo },
+  { name: "KPMG", logo: kpmgLogo },
   { name: "Pega", logo: pegaLogo },
   { name: "Daikin", logo: daikinLogo },
   { name: "Broadcom", logo: broadcomLogo },
