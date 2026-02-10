@@ -285,7 +285,7 @@ const Contact = () => {
             
             {/* Side Info Panel */}
             <div className="md:w-1/3 bg-[#112240] p-8 text-white flex flex-col justify-center">
-              <h2 className="text-2xl font-serif font-bold mb-4 text-[#F4B41A]">Visit Our Campus</h2>
+              <h2 className="text-2xl font-serif font-bold mb-4 text-[#F4B41A]">Visit Our Office</h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <MapPin className="w-6 h-6 text-[#F4B41A] shrink-0" />

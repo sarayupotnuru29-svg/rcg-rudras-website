@@ -14,8 +14,11 @@ const DemoForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.phone && formData.course) {
+    // Validate that phone is exactly 10 digits before submitting
+    if (formData.name && formData.phone.length === 10 && formData.course) {
       redirectToWhatsAppDemo(formData);
+    } else if (formData.phone.length !== 10) {
+      alert("Please enter a valid 10-digit phone number.");
     }
   };
 
@@ -55,14 +58,21 @@ const DemoForm = () => {
           <Input
             id="demo-phone"
             type="tel"
-            placeholder="Enter your phone number"
+            placeholder="10-digit mobile number"
             value={formData.phone}
-            onChange={(e) =>
-              setFormData({ ...formData, phone: e.target.value })
-            }
+            maxLength={10} // Prevents more than 10 digits
+            pattern="[0-9]{10}" // HTML5 validation for exactly 10 digits
+            onChange={(e) => {
+              // Only allow numbers to be typed
+              const value = e.target.value.replace(/\D/g, "");
+              setFormData({ ...formData, phone: value });
+            }}
             required
             className="bg-background border-border focus:border-accent focus:ring-accent"
           />
+          {formData.phone && formData.phone.length !== 10 && (
+            <p className="text-[10px] text-red-500 mt-1">Number must be 10 digits</p>
+          )}
         </div>
 
         <div className="space-y-2">
